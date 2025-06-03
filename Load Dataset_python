@@ -1,0 +1,6 @@
+# Load dataset
+df = pd.read_csv('spam.csv', encoding='latin-1')[['v1', 'v2']]
+df.columns = ['label', 'text']
+
+# Convert labels to binary
+df['label'] = df['label'].map({'ham': 0, 'spam': 1})
